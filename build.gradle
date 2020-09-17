@@ -1,0 +1,20 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'application'
+}
+group = 'com.ahammel'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+}
+compileKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+application {
+    mainClassName = 'MainKt'
+}
